@@ -15,6 +15,8 @@ fn main() {
         .build()
         .join("build");
 
+    println!("cargo:rerun-if-changed=couchbase-lite-core");
+
     let out_dir = getenv_unwrap("OUT_DIR");
     let out_dir = Path::new(&out_dir);
 
